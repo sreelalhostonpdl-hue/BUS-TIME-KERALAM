@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kerala Bus Finder</title><meta name="theme-color" content="#0b3d2e">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="assets/icon.svg">
+<link rel="stylesheet" href="css/app.css"></head><body><div id="app">
+<div class="top"><small>Kerala Bus Finder</small><h1>Where are you<br>going today?</h1></div>
+<div id="v-search" class="view on">
+<form id="search" class="card"><div class="route"><div class="dots"><i></i><span></span><i></i></div>
+<input id="from" list="stops" placeholder="From" aria-label="From" autocomplete="off">
+<button type="button" id="swap" aria-label="Swap from and to">⇅</button>
+<input id="to" list="stops" placeholder="To" aria-label="To" autocomplete="off"></div>
+<datalist id="stops"></datalist><button class="go">Search buses</button></form>
+<div class="sec"><h2>Popular routes</h2><div class="chips" id="popular"></div></div>
+<div class="sec" id="recentSec"><h2>Recent</h2><div class="chips" id="recent"></div></div>
+<div class="sec" aria-live="polite"><h2>Buses</h2><div id="results"><div class="empty">Pick a route to see buses.<br>Results are demo data until real timetables are verified.</div></div></div></div>
+<div id="v-saved" class="view"><div class="sec" style="padding-top:20px"><h2>Saved buses</h2><div id="saved"></div></div></div>
+<div id="v-about" class="view"><div class="sec" style="padding-top:20px"><h2>About</h2><div class="card" style="padding:16px">Timetables for KSRTC and private buses across Kerala. Every schedule is labelled verified, operator-submitted, unverified or demo.</div></div></div>
+<nav class="tabs"><button data-v="search" class="on"><span>🔎</span>Search</button><button data-v="saved"><span>♥</span>Saved</button><button data-v="about"><span>ⓘ</span>About</button></nav>
+</div><script src="js/demo-data.js"></script><script type="module" src="js/app.js"></script>
+<script>if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"))</script></body></html>
